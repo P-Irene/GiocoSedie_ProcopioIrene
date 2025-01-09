@@ -14,7 +14,7 @@ public class Posto {
     public Posto(){
 	occupato = false;
     }
-
+ 
     public synchronized boolean libero() {
 	return (!occupato);
     }

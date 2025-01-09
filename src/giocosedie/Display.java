@@ -11,7 +11,7 @@ package giocosedie;
 public class Display extends Thread{
     private Posto sedie[];
     private boolean endgame;
-
+ 
     public Display(Posto sedie[]) {
 	this.sedie = new Posto[sedie.length];
 	for (int s = 0; s < sedie.length; s++)

@@ -25,7 +25,7 @@ public class GiocoSedie {
 	//System.out.println("Sto facendo partire il Display.");
         logger.info("Sto facendo partire il Display.\n");
 	display.start();
-
+ 
 	Partecipante array[] = new Partecipante[NUMSEDIE+1];
 	for (int i = 0; i < NUMSEDIE + 1; i++) {
 		array[i] = new Partecipante(sedie);
