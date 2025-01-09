@@ -10,6 +10,7 @@ package giocosedie;
  */
 public class Partecipante extends Thread {
     Posto sedie[];
+    
     public Partecipante(Posto sedie[]) {
 	this.sedie = sedie;
 
@@ -28,5 +29,5 @@ public class Partecipante extends Thread {
 	} catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-    }
+  }
 }
