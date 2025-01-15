@@ -19,7 +19,8 @@ public class GiocoSedie {
         Scanner myObj = new Scanner(System.in);
         System.out.println("Scegliere il numero di partecipanti: ");
         int num = myObj.nextInt();
-        Posto sedie[] = new Posto[num];
+        
+        Posto sedie[] = new Posto[num-1];
 
 	for (int k = 0; k < sedie.length; k++)
             sedie[k] = new Posto();
@@ -29,8 +30,8 @@ public class GiocoSedie {
         logger.info("Sto facendo partire il Display.\n");
 	display.start();
  
-	Partecipante array[] = new Partecipante[num+1];
-	for (int i = 0; i < num + 1; i++) {
+	Partecipante array[] = new Partecipante[num];
+	for (int i = 0; i < num; i++) {
             array[i] = new Partecipante(sedie);
             //System.out.println("Sto facendo partire il thread n." + array[i].getId());
             logger.info("Sto facendo partire il thread id: " + array[i].getId() + " name: " + array[i].getName() + "\n");

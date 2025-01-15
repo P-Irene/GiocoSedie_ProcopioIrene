@@ -11,14 +11,25 @@ package giocosedie;
 public class Posto {
     private boolean occupato;
     
+    /**
+     * Metodo Costruttore
+     */
     public Posto(){
 	occupato = false;
     }
- 
+    
+    /**
+     * Controlla se il posto è libero
+     * @return se il posto è libero restitutisce occupato = true, se il posto non è libero restitutisce occupato = false
+     */
     public synchronized boolean libero() {
 	return (!occupato);
     }
-
+    
+    /**
+     * Controlla che il posto sia libero
+     * @return false se il posto risulta occupato (occupato = true), mentre, ritorna occupato = true se il posto risulta libero (occupato = false)
+     */
     public synchronized boolean occupa() {
 	if (occupato)
             return false;
