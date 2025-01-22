@@ -28,6 +28,7 @@ public class Partecipante extends Thread {
      */
     public Partecipante(Posto sedie[]) {
 	this.sedie = sedie;
+        //Creazione ed apertura del file: potrebbe generare un'eccezione che verrà gestita attraverso il blocco try-catch
         try {
             br = new BufferedWriter(new FileWriter(nomeFile, true));
         } catch (IOException ex) {
@@ -39,9 +40,9 @@ public class Partecipante extends Thread {
 	try {
             sleep((int) (Math.random() * 1000)); //Il thread finisce nell'area di sleeping per un numero di millisecondi generato randomicamente
             for (int i = 0; i < sedie.length; i++) {
-		if (sedie[i].occupa()) {
+		if (sedie[i].occupa()) { //Se il posto risulta libero, il partecipante si siede e lo occupa
                     System.out.println("Sono il Thread " + this.getName() + ". Sono riuscito a sedermi sul posto " + i);
-                    scrivi(i);
+                    scrivi(i);  //Viene invocato il metodo scrivi che aggiornerà il file Risultato.txt
                     return;
 		}
             }
@@ -51,6 +52,10 @@ public class Partecipante extends Thread {
         }
     }
     
+    /**
+     * 
+     * @param i indica il numero del posto che il Partecipante è riuscito ad accupare
+     */
     public void scrivi(int i){
         try {
             if(i == 0){

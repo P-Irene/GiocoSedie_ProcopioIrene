@@ -31,6 +31,7 @@ public class GiocoSedie {
 	display.start();
  
 	Partecipante array[] = new Partecipante[num];
+        //Ciclo che permette di istanziare num numero di Partecipanti al gioco
 	for (int i = 0; i < num; i++) {
             array[i] = new Partecipante(sedie);
             //System.out.println("Sto facendo partire il thread n." + array[i].getId());

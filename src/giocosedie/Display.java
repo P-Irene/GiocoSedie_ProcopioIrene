@@ -4,6 +4,15 @@
  */
 package giocosedie;
 
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Irene Procopio
@@ -28,19 +37,19 @@ public class Display extends Thread{
             while(!endgame){ //finché il gioco non finisce
                 int count = 0;
                 sleep((int) (Math.random() * 250)); //Il thread finisce nell'area di sleeping per un numero di millisecondi generato randomicamente
-                for (int i = 0; i < sedie.length; i++) {
-                    if (sedie[i].libero())
-                        System.out.print("0");
-                    else {
+                for (int i = 0; i < sedie.length; i++) {  //Vengono controllati i posti: 
+                    if (sedie[i].libero())      //se il posto risulta libero
+                        System.out.print("0");  //viene stampato uno 0
+                    else {                      //altrimenti
                         count++;
-                        System.out.print("*");
+                        System.out.print("*");  //viene stampa un asterisco
                     }
                 }
                 System.out.println();
-                endgame = (count == sedie.length);
+                endgame = (count == sedie.length);  //quando le sedie risultano tutte occupate il gioco termina
             }
         }catch (InterruptedException e) {
 		throw new RuntimeException(e);
         }
-	}
+    }
 }
